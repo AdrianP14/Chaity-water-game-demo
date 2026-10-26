@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#087db5">
+    <title>Clear the Current</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="app">
+      <header class="site-header">
+        <a class="wordmark" href="#" aria-label="Clear the Current home">CLEAR THE CURRENT</a>
+        <span class="header-note">A little game about a big need</span>
+      </header>
+
+      <section class="game-shell" aria-label="Clear the Current game">
+        <div class="game-topline">
+          <div>
+            <p class="eyebrow">RIVER RESCUE · PROTOTYPE</p>
+            <h1>Clear the Current</h1>
+          </div>
+          <div class="stats" aria-live="polite">
+            <div class="stat"><span class="stat-label">SCORE</span><strong id="score">0</strong></div>
+            <div class="stat"><span class="stat-label">TIME</span><strong><span id="time">30</span><small>s</small></strong></div>
+            <div class="stat"><span class="stat-label">LIVES</span><strong id="hearts" aria-label="3 lives">♥ ♥ ♥</strong></div>
+          </div>
+        </div>
+
+        <div class="meter-row">
+          <span class="meter-label">CLEAN WATER METER</span>
+          <div class="meter-track" role="progressbar" aria-label="Clean Water Meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="meter">
+            <div class="meter-fill" id="meter-fill"></div>
+          </div>
+          <span class="meter-value" id="meter-value">0%</span>
+        </div>
+
+        <div class="game-area" id="game-area" aria-label="Game area. Press Space or tap to swim up.">
+          <div class="river-haze" aria-hidden="true"></div>
+          <div class="river-bank river-bank-top" aria-hidden="true"></div>
+          <div class="river-bank river-bank-bottom" aria-hidden="true"></div>
+          <div class="river-current current-one" aria-hidden="true"></div>
+          <div class="river-current current-two" aria-hidden="true"></div>
+          <div class="river-current current-three" aria-hidden="true"></div>
+          <div class="player" id="player" aria-label="Your fish">🐠</div>
+          <div class="entity-layer" id="entity-layer" aria-hidden="true"></div>
+
+          <div class="screen screen-start" id="start-screen">
+            <div class="screen-card">
+              <span class="card-icon" aria-hidden="true">〰️</span>
+              <p class="eyebrow">DIVE IN</p>
+              <h2>Help your fish find a cleaner current.</h2>
+              <p>Swim up for water drops, dodge the trash, and hold on for 30 seconds.</p>
+              <p class="control-hint"><kbd>SPACE</kbd> to swim up <span aria-hidden="true">·</span> tap the river on mobile</p>
+              <button class="button button-primary" id="play-button" type="button">Play <span aria-hidden="true">→</span></button>
+            </div>
+          </div>
+
+          <div class="screen screen-end" id="end-screen" hidden>
+            <div class="screen-card end-card">
+              <span class="card-icon" id="end-icon" aria-hidden="true">💧</span>
+              <p class="eyebrow" id="end-eyebrow">RIVER REPORT</p>
+              <h2 id="end-title">Current cleared!</h2>
+              <p class="final-score">Final score <strong id="final-score">0</strong></p>
+              <p class="drops-summary">Water drops collected <strong id="final-drops">0</strong></p>
+              <p class="water-message">Safe drinking water is essential, yet many people still lack reliable access to it. Learn more about the work to change that.</p>
+              <a class="charity-link" href="https://www.charitywater.org/" target="_blank" rel="noopener noreferrer">Visit charity: water <span aria-hidden="true">↗</span></a>
+              <div class="charity-logo" role="img" aria-label="charity: water">
+                <img src="assets/charity-water-mark.png" alt="">
+                <span>charity: water</span>
+              </div>
+              <button class="button button-primary" id="play-again-button" type="button">Play Again <span aria-hidden="true">↻</span></button>
+            </div>
+          </div>
+
+          <div class="celebration" id="celebration" aria-hidden="true"></div>
+          <div class="toast" id="toast" aria-live="polite"></div>
+        </div>
+
+        <div class="game-footer">
+          <p><span class="legend-drop" aria-hidden="true">💧</span> Collect drops <span class="legend-trash" aria-hidden="true">♻</span> Dodge trash <span class="legend-power" aria-hidden="true">✦</span> Clear the current</p>
+          <button class="button button-reset" id="reset-button" type="button" hidden>Reset <span aria-hidden="true">↻</span></button>
+        </div>
+      </section>
+      <footer class="page-footer">A demo version of game. Early in process</footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
